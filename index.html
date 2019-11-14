@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>OMDb API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
+
+    <style>
+      #results {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 16px;
+      }
+
+      #results li {
+        cursor: grab;
+      }
+
+      #results li:active {
+        cursor: grabbing;
+      }
+
+      #results li.ghost {
+        filter: grayscale(1);
+        opacity: 0.5;
+      }
+
+      #results img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-8">
+          <h2>oMDB API + sortable</h2>
+          <form class="form-inline" id="search-form">
+            <div class="mr-2">
+              <input type="text" class="form-control" placeholder="Find movie" id="search-input">
+            </div>
+            <input type="submit" class="btn btn-primary">
+          </form>
+          <div id="results" class="my-3"></div>
+        </div>
+        
+        <div class="col-4">
+          <h2>Select 2</h2>
+          <select class="select2 w-100" name="country" multiple>
+            <option value="AL">Alabama</option>
+            <option value="WY">Wyoming</option>
+            <option value="CA">California</option>
+            <option value="NY">New York</option>
+            <option value="CH">Chicago</option>
+          </select> 
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
